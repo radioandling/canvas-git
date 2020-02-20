@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var cvsCtx = c.getContext("2d");
+cvsCtx.arc(100, 100, 50, 0, 2*Math.PI, false);
+cvsCtx.save();
+// 设置cvsCtx.clip()，意味着后面画的图形只会和上面所画的圆相交的地方显示，其他地方不显示
+cvsCtx.clip();
+cvsCtx.fillStyle = "#00ff00";
+cvsCtx.fillRect(100, 100, 200, 100);
+cvsCtx.restore();
+
+
+cvsCtx.beginPath();
+cvsCtx.arc(100, 40, 80, 0, 2*Math.PI, false);
+cvsCtx.fillStyle = "#0000ff";
+cvsCtx.fill();
+
+</script>
+
+</body>
+</html>

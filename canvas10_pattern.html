@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var cvsCtx = c.getContext("2d");
+var img = new Image();
+img.src = 'logo2.png'
+
+img.onload = function(){
+    // 四种模式： no-repeat/repeat/repeat-x/repeat-y
+    var pattern = cvsCtx.createPattern(img, 'repeat-x');
+    cvsCtx.fillStyle = pattern;
+    cvsCtx.fillRect(0, 0, c.width, c.height);
+}
+
+
+</script>
+
+</body>
+</html>

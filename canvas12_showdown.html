@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var cvsCtx = c.getContext("2d");
+// 相当于原图形左上角的偏移量，会对后面的绘制产生影响
+cvsCtx.shadowOffsetX = 20;
+cvsCtx.shadowOffsetY = -20;
+cvsCtx.shadowBlur = 10;
+cvsCtx.shadowColor = "#00ff00";
+cvsCtx.fillStyle = "#e64340";
+cvsCtx.fillRect(100, 100, 200, 100);
+
+
+</script>
+
+</body>
+</html>
