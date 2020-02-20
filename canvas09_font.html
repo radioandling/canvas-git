@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var cvsCtx = c.getContext("2d");
+
+var text = 'Hello, Wrold';
+cvsCtx.font = 'normal 500 50px sans-serif';
+// 设置文字的水平方向，值有“left，center，right”，
+// cvsCtx.textAlign = 'left';  //，意思是下边的(400,100)里面的400就是文字放置的水平左边线;
+// // 同上，这时，下边的（400，100）中的100就是文字的上边线
+// cvsCtx.textBaseline = 'top';
+var fillColor = cvsCtx.createLinearGradient(100, 100, 800, 100);
+fillColor.addColorStop(0, "red");
+fillColor.addColorStop(1, "rgb(0,255,255)");
+cvsCtx.fillStyle = fillColor;
+cvsCtx.StrokeStyle = fillColor;
+cvsCtx.strokeStyle = fillColor;
+
+cvsCtx.fillText(text, 400, 100); 
+cvsCtx.strokeText(text, 100, 100);
+
+//获取文本的宽度
+var metrics =cvsCtx.measureText(text).width;
+console.log(metrics)
+
+
+
+</script>
+
+</body>
+</html>

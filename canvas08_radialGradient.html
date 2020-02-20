@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+// var grd=ctx.createRadialGradient(100,100,0,100,100,500);
+// 意思是：在100，100点的地方，想外面辐射500为半径的颜色范围，后面画的圆必须要在这个范围内，不然就显示不出来。在哪个位置，圆里面的颜色就是辐射到的地方的颜色
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var grd=ctx.createRadialGradient(100,100,0,100,100,500);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+ctx.fillStyle=grd;
+// ctx.fillRect(10,10,150,100);
+
+ctx.arc(400, 100, 100, 0, 2*Math.PI, false);
+ctx.fill();
+
+</script>
+
+</body>
+</html>

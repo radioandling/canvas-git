@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="mycanvas" class="canvas" width="800px" height="200px">
+        您的浏览器版本过低，不支持当前元素，请升级浏览器
+    </canvas>
+
+    <script>
+        var cans = document.getElementById('mycanvas');
+        var cvsCtx = cans.getContext('2d');
+        cvsCtx.translate(100, 100);
+        cvsCtx.arc(0, 0, 100, 0, 2 * Math.PI, true);
+        cvsCtx.stroke();
+        cvsCtx.beginPath();
+
+
+        for (let index = 0; index < 12; index++) {
+            cvsCtx.rotate(30 * Math.PI / 180);
+            cvsCtx.lineWidth = 3;
+            cvsCtx.moveTo(90, 0);
+            cvsCtx.lineTo(100, 0);
+
+        }
+        cvsCtx.stroke();
+
+
+    </script>
+</body>
+
+</html>
